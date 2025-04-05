@@ -29,3 +29,15 @@ Prerequisites
 Java 17+
 Maven
 PostgreSQL (set up and running)
+
+Configure PostgreSQL credentials in application.properties:
+
+spring.datasource.url=jdbc:postgresql://localhost:5432/EventManagementSystem
+spring.datasource.username=postgres
+spring.datasource.password=postgres
+
+Run the application:
+mvn spring-boot:run
+
+Access the Swagger UI:
+http://localhost:8080/swagger-ui/index.html

@@ -3,6 +3,7 @@ package com.nt.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,10 +23,11 @@ import lombok.RequiredArgsConstructor;
 @RestController
 @RequestMapping("/api/events")
 @RequiredArgsConstructor
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "http://localhost:4200")
 public class EventController {
     @Autowired
     private EventService eventService;
+    
 
     @GetMapping
     public Page<Event> getEvents(

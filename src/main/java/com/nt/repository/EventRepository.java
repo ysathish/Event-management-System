@@ -9,4 +9,5 @@ import com.nt.model.Event;
 
 public interface EventRepository extends JpaRepository<Event, Long> {
     Page<Event> findByNameContainingIgnoreCaseOrDate(String name, LocalDate date, Pageable pageable);
+//    Page<Event> findByName(String name);
 }

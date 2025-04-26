@@ -42,7 +42,7 @@ public class SecurityConfig {
 	public SecurityFilterChain security(HttpSecurity sec) throws Exception
 	{
 		sec.csrf(cus->cus.disable());
-		sec.cors(Customizer.withDefaults()); // 🔥 Add this line!
+		sec.cors(Customizer.withDefaults()); 
 
 		sec.authorizeHttpRequests(request->request
 				.requestMatchers("/api/auth/register", "/api/auth/login")
@@ -57,7 +57,7 @@ public class SecurityConfig {
 	@Bean
 	public CorsConfigurationSource corsConfigurationSource() {
 	    CorsConfiguration configuration = new CorsConfiguration();
-	    configuration.addAllowedOrigin("http://localhost:4200"); // adjust for your frontend
+	    configuration.addAllowedOrigin("http://localhost:4200"); 
 	    configuration.addAllowedMethod("*");
 	    configuration.addAllowedHeader("*");
 	    configuration.setAllowCredentials(true);

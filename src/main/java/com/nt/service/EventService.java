@@ -57,4 +57,10 @@ public class EventService {
     public void deleteEvent(Long id) {
         eventRepository.deleteById(id);
     }
+
+
+	public void getMatchingEvent(String name) {
+		
+		  eventRepository.findByName(name);
+	}
 }
